@@ -1,44 +1,36 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
 int mod(long long int x, long long int denum);
 int isPrime(long long int denum);
 long long int lpd(long long int x);
-int main(){
-    long long int x = 0;
-    if (scanf("%lld",&x) != 1){
-        printf("n/a");
-        return 0;
+int main() {
+  long long int x = 0;
+  if (scanf("%lld", &x) != 1) {
+    printf("n/a");
+    return 0;
+  }
+  printf("%lld", lpd(x));
+}
+
+int mod(long long int x, long long int denum) {
+  while (1) {
+    if (x == 0) return 1;
+    if (x < 0) return 0;
+    x -= denum;
+  }
+}
+
+int isPrime(long long denum) {
+  if (denum > 1)
+    for (int i = 2; i < denum; i++) {
+      if (mod(denum, i)) return 0;
     }
-    printf("%lld", lpd(x));
-    
-    
+  return 1;
 }
 
-int mod(long long int x, long long int denum){
-    while(1){
-        if (x == 0)
-            return 1;
-        if (x < 0)
-            return 0;
-        x-=denum;
-    }
-}
-
-int isPrime(long long denum){
-        if (denum > 1)
-            for (int i = 2; i < denum; i++){
-                if (mod(denum, i))
-                    return 0;
-            }
-    return 1;
-}
-
-long long int lpd(long long int x){
-    for (long long int denum = x; denum >= 2; denum--)
-        if (mod(x,denum) == 1)
-            if (isPrime(denum))
-                return denum;
+long long int lpd(long long int x) {
+  for (long long int denum = x; denum >= 2; denum--)
+    if (mod(x, denum) == 1)
+      if (isPrime(denum)) return denum;
 }
