@@ -28,9 +28,9 @@ void coding() {
       printf("n/a");
       break;
     }
-    if (n == ' ')
+    if (n == ' ') {
       printf("%X ", c);
-    else {
+    } else {
       printf("%X", c);
       break;
     }
@@ -46,9 +46,9 @@ void decoding() {
       printf("n/a");
       break;
     }
-    if (n == ' ')
+    if (n == ' ') {
       printf("%c ", hex);
-    else {
+    } else {
       printf("%c", hex);
       break;
     }

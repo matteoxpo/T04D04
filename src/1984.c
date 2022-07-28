@@ -25,9 +25,10 @@ int mod(long long int x, long long int denum) {
 }
 
 int isPrime(long long denum) {
-  if (denum > 1)
-    for (int i = 2; i < denum; i++) {
-      if (mod(denum, i)) return 0;
+    if (denum > 1) {
+        for (int i = 2; i < denum; i++) {
+            if (mod(denum, i)) return 0;
+        }
     }
   return 1;
 }

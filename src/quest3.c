@@ -10,8 +10,9 @@ int main() {
       return 0;
     }
     printf("%lld", Fib(num));
-  } else
+  } else {
     printf("n/a");
+  }
   return 0;
 }
 
