@@ -24,13 +24,10 @@ int main() {
         }
         printf("\n");
     }
-    
     print_graph(Verz);
     print_graph(Bern);
     print_graph(Par);
-    
     return 0;
-    
 }
 
 long double Verz(long double x) {
@@ -56,7 +53,7 @@ void print_graph(long double (*f)(long double)) {
         min = y < min ? y : min;
     }
     long double norma = (min + max)/21;
-    for (int i = 0; i < 21; i++){
+    for (int i = 0; i < 21; i++) {
         for (long double x = -M_PI; x <= M_PI + 0.001; x += step) {
             long double y = f(x);
             if (y > (max - (i + 1) * norma) && y <= (max - i * norma))
